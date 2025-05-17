@@ -17,11 +17,12 @@ let safeclick = 0;
 let mineclick = 0;
 let gameOver = false;
 let totalMines = 0;
-let walletAmount = 10000;
+let walletAmount = parseFloat(localStorage.getItem("walletAmount")) || 10000;
 const walletDisplay = document.getElementById("wallet-display");
-
+updateWalletDisplay();
 function updateWalletDisplay() {
   walletDisplay.textContent = `Wallet: ₹${walletAmount.toFixed(2)}`;
+  localStorage.setItem("walletAmount", walletAmount.toFixed(2));
 }
 
 
